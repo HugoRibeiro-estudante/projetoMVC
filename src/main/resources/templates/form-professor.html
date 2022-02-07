@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragmentos/layout">
+<div th:fragment="conteudo">
+
+  <div class="container">
+    <h1>Cadastro de professores</h1>
+    <form action="/novo-professor" method="post" th:object="${professor}" class="mt-4">
+      
+      <div class="mb-3">
+        <label for="nomep" class="form-label">Nome: </label>
+        <input type="text" th:field="*{nome}" class="form-control" id="nomep" required>
+      </div>
+
+      
+      <input type="hidden" th:field="*{id}">
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+
+</div>
+
+</html>

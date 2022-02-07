@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="navbar" class="navbar navbar-dark navbar-expand-md bg-dark mb-4">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon "></span>
+  </button>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white m-1 material-icons" href="/" title="Início">home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle material-icons" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            people
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/novo-professor">Novo</a>
+            <a class="dropdown-item" href="/professores">Todos</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle material-icons" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            school
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/novo-disciplina">Novo</a>
+            <a class="dropdown-item" href="/disciplinas">Todos</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle material-icons" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           
+              account_circle
+           
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/novo-aluno">Novo</a>
+            <a class="dropdown-item" href="/alunos">Todos</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h3 class="text-white">Projeto Sistema Web MVC SQL</h3>
+  </div>
+</div>
+
+<div th:fragment="rodape">
+  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#sobre">
+    Quem somos
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="sobre" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Projeto Sistema Web MVC e SQL</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>No segundo período o estudante desenvolverá um sistema web monolítico utilizando template engine MVC e
+            acesso a dados
+            baseado em comandos SQL. A concepção deste projeto foi para que o estudante tenha a oportunidade tanto de
+            utilizar uma
+            tecnologia de template engine, bem como aplicar na prática o acesso a dados de uma forma mais manual, via
+            comandos SQL, sem
+            ainda recorrer a ferramentas modernas de mapeamento objeto-relacional.</p>
+          <p>Tecnologias utilizadas neste sistema:</p>
+          <ul>
+            <li>GitHub</li>
+            <li>Maven</li>
+            <li>Spring boot</li>
+            <li>MySQL</li>
+            <li>Javascript</li>
+            <li>JQuery</li>
+            <li>MVC</li>
+            <li>Bootstrap 4</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>

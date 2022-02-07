@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragmentos/layout">
+<div th:fragment="conteudo">
+  <div class="container mt-3">
+    <form class="col-6" method="post" th:object="${disciplina}">
+      <h3>Nova disciplina</h3>
+      <div class="form-group">
+        <label>Nome da disciplina</label>
+        <input th:field="*{nome}" type="text" class="form-control">
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Nome do professor responsável</label>
+        <select id="professor.id" name="professor.id" class="form-control">
+          <option 
+              th:each="prof : ${lista}" 
+              th:value="${prof.id}" 
+              th:text="${prof.nome}"
+              th:selected="*{professor!=null}? (*{professor.id}==${prof.id})">opção</option>
+        </select>  
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+</div>
+</html>

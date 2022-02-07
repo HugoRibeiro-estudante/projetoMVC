@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragmentos/layout">
+<div th:fragment="conteudo">
+  <div class="container mt-3">
+    <div class="col-12">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Disciplinas matriculadas</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="aluno:${alunos}" th:object="${aluno}">
+            <td th:text="*{id}">1</td>
+            <td><a th:href="@{/matricular-aluno(id=*{id})}" th:text="*{nome}"></a></td>
+            <td th:text="*{email}">3</td>
+            <td th:text="*{cpf}">4</td>
+            <td>
+              <ul th:each="matricula : ${matriculas}" th:if="${matricula.idAluno} == *{id}">
+                <li th:each="idDisciplina : ${matricula.disciplinas}">
+                  <div th:each="disciplina : ${disciplinas}" th:if="${disciplina.id} == ${idDisciplina}"
+                    th:text="${disciplina.nome}">
+                  </div>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <a th:href="@{/editar-aluno(id=*{id})}">Editar</a>
+              <a th:href="@{/excluir-aluno(id=*{id})}">Excluir</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</html>
